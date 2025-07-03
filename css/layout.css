@@ -1,0 +1,133 @@
+/* -------------------------------------------------
+   RESET & BASE STYLES
+   ------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;              /* so we can push the footer down */
+    font-family: Arial, sans-serif;
+
+}
+
+/* -------------------------------------------------
+                 TOP NAVIGATION  
+   ------------------------------------------------- */
+.topnav {
+    background-color: #333;
+    overflow: hidden;          /* clear the floats inside */
+    padding: 8px 8px;
+    height: auto;            /* auto height to fit content */
+}
+
+/* links on the left */
+.topnav a {
+    float: left;
+    color: #00ff7b;
+    text-decoration: none;
+    padding: 8px 14px;
+}
+
+.topnav a:hover {
+    background-color: #006aff;
+    color: black;
+}
+
+/* --- clearfix so .topnav encloses its floated children --- */
+.topnav::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* sign‑in / sign‑up on the far right */
+.topnav-right { float: right; }
+
+
+/* -------------------------------------------------
+   BANNER
+   ------------------------------------------------- */
+.banner {
+    background: #111;
+    border: 5px solid #00ff7b;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.banner h1 {
+    margin: 0;
+    color: #00ff7b;
+    text-decoration: underline;
+}
+
+/* -------------------------------------------------
+   MAIN PAGE LAYOUT
+   ------------------------------------------------- */
+.page-content {
+    flex: 1;                   /* fills all space between nav and footer */
+    display: flex;             /* puts main‑left and sidebar in a row */
+    gap: 20px;                 /* space between the two columns */
+    padding: 20px;
+    background: #fff;
+}
+
+/* left column: actual page text */
+.main-left {
+    flex: 1;                   /* take all remaining width */
+    background: #222;          /* same as page background */
+    padding: 10px 20px;
+    border: 3px solid #00ff7b;
+}
+
+.main-left h2   { margin-top: 0; color: #00ff7b;}
+.main-left p    { margin: 0 0 1em 0; line-height: 1.6; color: #fff; }
+
+/* right column: sidebar */
+.sidebar {
+    flex: 0 0 250px;           /* fixed 250 px width, no grow */
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    border-left: 5px solid #00ff7b;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+}
+
+.sidebar h3 { color: #00ff7b; margin-top: 0; }
+
+/* -------------------------------------------------
+   FOOTER – always at the bottom
+   ------------------------------------------------- */
+.footer {
+    background: #222;
+    text-align: center;
+    padding: 10px;
+    border: 5px solid #00ff7b;
+}
+
+.footer p { margin: 0; color: #00ff7b; }
+
+/* -------------------------------------------------
+   SIMPLE RESPONSIVE TWEAK
+   Stack sidebar under main content on small screens
+   ------------------------------------------------- */
+@media (max-width: 768px) {
+
+    .page-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: none;
+        width: 100%;
+        margin-top: 20px;
+
+        /* move the accent line to the top on mobile */
+        border-left: none;
+        border-top: 5px solid #00ff7b;
+        border-radius: 5px 5px 0 0;
+    }
+
+}

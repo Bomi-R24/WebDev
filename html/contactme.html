@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+    <!-- Top Navigation Section -->
+    <div class="topnav"> 
+        <a href="index.html">Home</a> 
+        <a href="aboutme.html">About Me</a>
+        <a href="myhobbies.html">My Hobbies</a> 
+        <a href="myproject.html">My Project</a> 
+        <a href="contactme.html">Contact Me</a>
+
+        <div class="topnav-right">
+            <a href="signin.html">Sign In</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner">
+        <h1>Contact Me</h1>
+    </div>
+
+    <!-- Main Layout: Page Content + Sidebar -->
+    <div class="page-content">
+
+        <!-- Main Left Column -->
+        <div class="main-left">
+            <h2>Talk to Me</h2>
+
+            <form action="" method="post">
+                <input type="text" name="name" placeholder="Enter your full name" required /><br><br>
+                <input type="email" name="email" placeholder="Enter your email address" required /><br><br>
+                <input type="tel" name="phone" placeholder="Enter your phone number" required /><br><br>
+
+                <select name="subject" required>
+                    <option value="" disabled selected>Select Subject</option>
+                    <option value="email">Email Support</option>
+                    <option value="projects">Project Inquiry</option>
+                    <option value="feedback">General Feedback</option>
+                </select><br><br>
+
+                <textarea name="message" rows="5" cols="30" placeholder="Enter your message here..." required></textarea><br><br>
+
+                <input type="submit" value="Send Message" />
+                <input type="reset" value="Clear" />
+            </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <p>You're on the Contact Me page. Fill out the form to reach out with any inquiries, suggestions, or feedback.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

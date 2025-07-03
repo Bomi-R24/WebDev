@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+
+    <!-- Only main.css is needed **if** it already @imports form.css -->
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+
+    <!-- ░ Top Navigation ░ -->
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="myhobbies.html">My Hobbies</a>
+        <a href="myproject.html">My Project</a>
+        <a href="contactme.html">Contact Me</a>
+
+        <div class="topnav-right">
+            <a href="signin.html">Sign In</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- ░ Page Banner ░ -->
+    <div class="banner">
+        <h1>Sign In</h1>
+    </div>
+
+    <!-- ░ Two‑Column Layout ░ -->
+    <div class="page-content">
+
+        <!-- Main Left -->
+        <div class="main-left">
+            <h2>Welcome Back</h2>
+
+            <form>
+                <input type="text" name="username"
+                       placeholder="Enter your username" required><br>
+                <input type="password" name="password"
+                       placeholder="Enter your password" required><br><br>
+
+                <input type="submit" value="Sign In">
+            </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>No Account Yet?</h3>
+            <p>
+                Don’t have an account? <br>
+                <a href="signup.html" style="color:#00ff7b;">Create one here</a>
+            </p>
+            <p>Signing in lets you access personalised features and updates.</p>
+        </div>
+    </div>
+
+    <!-- ░ Footer ░ -->
+    <footer class="footer">
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

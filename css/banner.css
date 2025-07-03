@@ -1,0 +1,8 @@
+.banner {
+    color: #00ff7b;
+    text-align: center;
+    text-decoration: underline;
+    padding: 15px;
+    border: 8px solid #00ff7b;
+    background-color: #222;
+}
