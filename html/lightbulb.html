@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In</title>
+    <title>Lightbulb Toggle</title>
 
-    <!-- Only main.css is needed **if** it already @imports form.css -->
+    <!-- CSS Import -->
     <link rel="stylesheet" href="../css/main.css" />
+
+    <!-- Load the bulb‑toggle script -->
+    <script src="../js/lightbulb.js" defer></script>
 </head>
 <body>
 
-    <!-- ░ Top Navigation ░ -->
+    <!-- ░ Top Navigation ░ -->
     <div class="topnav">
         <a href="index.html">Home</a>
         <a href="aboutme.html">About Me</a>
@@ -18,43 +21,46 @@
         <a href="myproject.html">My Project</a>
         <a href="contactme.html">Contact Me</a>
         <a href="lightbulb.html">Lightbulb</a>
-
         <div class="topnav-right">
             <a href="signin.html">Sign In</a>
             <a href="signup.html">Sign Up</a>
         </div>
     </div>
 
-    <!-- ░ Page Banner ░ -->
+    <!-- ░ Banner ░ -->
     <div class="banner">
-        <h1>Sign In</h1>
+        <h1>Lightbulb Toggle</h1>
     </div>
 
     <!-- ░ Two‑Column Layout ░ -->
     <div class="page-content">
 
-        <!-- Main Left -->
-        <div class="main-left">
-            <h2>Welcome Back</h2>
+        <!-- Main Left Column -->
+        <div class="main-left" style="text-align:center;">
+            <h2>Let There Be Light!</h2>
 
-            <form>
-                <input type="text" name="username"
-                       placeholder="Enter your username" required><br>
-                <input type="password" name="password"
-                       placeholder="Enter your password" required><br><br>
+            <!-- Bulb image -->
+            <img id="bulb"
+                 src="../images/BulbOff.jpeg"
+                 alt="Lightbulb"
+                 style="width:200px; border:5px solid #00ff7b; border-radius:10px;">
 
-                <input type="submit" value="Sign In">
-            </form>
+            <br><br>
+
+            <!-- Control buttons -->
+            <button onclick="turnOn()">Turn On</button>
+            <button onclick="turnOff()">Turn Off</button>
+            
         </div>
 
         <!-- Sidebar -->
         <div class="sidebar">
-            <h3>No Account Yet?</h3>
+            <h3>About This Demo</h3>
             <p>
-                Don’t have an account? <br>
-                <a href="signup.html" style="color:#00ff7b;">Create one here</a>
+                Click the buttons to switch the light on or off.  
+                The image changes instantly using a tiny JavaScript
+                file (<code>bulb.js</code>) that swaps the image source.
             </p>
-            <p>Signing in lets you access personalised features and updates.</p>
         </div>
     </div>
 
