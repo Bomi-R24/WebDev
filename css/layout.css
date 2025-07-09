@@ -1,14 +1,18 @@
 /* -------------------------------------------------
    RESET & BASE STYLES
    ------------------------------------------------- */
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;              /* so we can push the footer down */
+    min-height: 100vh;         /* ensure full viewport height */
     font-family: Arial, sans-serif;
-
+    background: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 /* -------------------------------------------------
@@ -16,9 +20,10 @@ html, body {
    ------------------------------------------------- */
 .topnav {
     background-color: #333;
-    overflow: hidden;          /* clear the floats inside */
+    overflow: hidden;
     padding: 8px 8px;
-    height: auto;            /* auto height to fit content */
+    position: relative;
+    z-index: 10;
 }
 
 /* links on the left */
@@ -34,17 +39,17 @@ html, body {
     color: black;
 }
 
-/* --- clearfix so .topnav encloses its floated children --- */
+/* clearfix */
 .topnav::after {
     content: "";
     display: table;
     clear: both;
 }
 
-
-/* sign‑in / sign‑up on the far right */
-.topnav-right { float: right; }
-
+/* right-aligned sign-in/up */
+.topnav-right {
+    float: right;
+}
 
 /* -------------------------------------------------
    BANNER
@@ -54,6 +59,7 @@ html, body {
     border: 5px solid #00ff7b;
     text-align: center;
     padding: 25px 10px;
+    z-index: 1;
 }
 
 .banner h1 {
@@ -66,36 +72,59 @@ html, body {
    MAIN PAGE LAYOUT
    ------------------------------------------------- */
 .page-content {
-    flex: 1;                   /* fills all space between nav and footer */
-    display: flex;             /* puts main‑left and sidebar in a row */
-    gap: 20px;                 /* space between the two columns */
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
     padding: 20px;
     background: #fff;
 }
 
-/* left column: actual page text */
+/* left column */
 .main-left {
-    flex: 1;                   /* take all remaining width */
-    background: #222;          /* same as page background */
+    flex: 1;
+    background: #222;
     padding: 10px 20px;
     border: 3px solid #00ff7b;
+    min-height: 500px;
+    color: #fff;
 }
 
-.main-left h2   { margin-top: 0; color: #00ff7b;}
-.main-left p    { margin: 0 0 1em 0; line-height: 1.6; color: #fff; }
+.main-left h2 {
+    color: #00ff7b;
+}
 
-/* right column: sidebar */
+.main-left p {
+    line-height: 1.6;
+}
+
+/* right column */
 .sidebar {
-    flex: 0 0 250px;           /* fixed 250 px width, no grow */
+    flex: 0 0 250px;
     background: #222;
     color: #fff;
     padding: 20px;
     border-left: 5px solid #00ff7b;
     border-radius: 0 5px 5px 0;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.sidebar h3 { color: #00ff7b; margin-top: 0; }
+.sidebar h3,
+.sidebar h2 {
+    color: #00ff7b;
+}
+
+/* -------------------------------------------------
+   EMPTY PAGE PADDING FIX
+   ------------------------------------------------- */
+.main-content {
+    flex: 1;
+    background: #222;
+    padding: 20px;
+    border: 3px solid #00ff7b;
+    min-height: 500px;
+    color: #fff;
+}
 
 /* -------------------------------------------------
    FOOTER – always at the bottom
@@ -105,16 +134,13 @@ html, body {
     text-align: center;
     padding: 10px;
     border: 5px solid #00ff7b;
+    color: #00ff7b;
 }
 
-.footer p { margin: 0; color: #00ff7b; }
-
 /* -------------------------------------------------
-   SIMPLE RESPONSIVE TWEAK
-   Stack sidebar under main content on small screens
+   RESPONSIVE TWEAKS
    ------------------------------------------------- */
 @media (max-width: 768px) {
-
     .page-content {
         flex-direction: column;
     }
@@ -123,11 +149,13 @@ html, body {
         flex: none;
         width: 100%;
         margin-top: 20px;
-
-        /* move the accent line to the top on mobile */
         border-left: none;
         border-top: 5px solid #00ff7b;
         border-radius: 5px 5px 0 0;
     }
 
+    .main-left,
+    .main-content {
+        min-height: auto;
+    }
 }
