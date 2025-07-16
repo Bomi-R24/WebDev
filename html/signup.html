@@ -37,7 +37,7 @@
         <div class="main-left">
             <h2>Create An Account</h2>
 
-            <form>
+            <form action="../php/signup_process.php" method="post">
                 <input type="text"     name="username"
                        placeholder="Choose a username" required><br>
                 <input type="email"    name="email"
@@ -46,9 +46,14 @@
                        placeholder="Create a password" required><br><br>
 
                 <input type="submit" value="Sign Up">
+                <input type="reset" value="Reset">
+
+                <div>
+                <p id="signup-message" style="margin-top: 10px; color: #00ff7b;"></p>
+                </div>
             </form>
         </div>
-
+        
         <!-- Sidebar -->
         <div class="sidebar">
             <h3>Already a Member?</h3>
