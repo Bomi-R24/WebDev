@@ -9,21 +9,8 @@
 </head>
 <body>
     <!-- Top Navigation Section -->
-    <div class="topnav">
-        <a href="index.html">Home</a> 
-        <a href="dashboard.php">Dashboard</a>
-        <a href="aboutme.html">About Me</a>
-        <a href="myhobbies.html">My Hobbies</a> 
-        <a href="myproject.html">My Project</a> 
-        <a href="contactme.html">Contact Me</a>
-        <a href="lightbulb.html">Lightbulb</a>
+    <?php include '../include/navbar.php'; ?>
 
-        <div class="topnav-right">
-            <a href="signin.html">Sign In</a>
-            <a href="signup.html">Sign Up</a>
-        </div>
-    </div>
-    
     <!-- Banner Section -->
     <div class="banner">
         <h1>My Hobbies</h1>
@@ -41,6 +28,29 @@
             <p>
                 From reading books to playing sports, I have a variety of hobbies that keep me engaged and entertained.
             </p>
-            
+    <!-- Hobbies List -->
+            <ul>
+                <li>Reading Fiction and Non-Fiction</li>
+                <li>Playing Football</li>
+                <li>Coding and Web Development</li>
+                <li>Exploring New Technologies</li>
+                <li>Gaming</li>
+            </ul>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="aboutme.php">About Me</a></li>
+                <li><a href="myproject.php">My Project</a></li>
+                <li><a href="contactme.php">Contact Me</a></li>
+            </ul>
+        </div>
+    </div> <!-- /page-content -->
+    
+    <!-- Footer -->
+    <?php include '../include/footer.php'; ?>
+    
 </body>
 </html>

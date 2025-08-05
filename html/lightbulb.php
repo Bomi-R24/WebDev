@@ -12,19 +12,7 @@
 <body>
 
     <!-- ░ Top Navigation ░ -->
-    <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.php">Dashboard</a>
-        <a href="aboutme.html">About Me</a>
-        <a href="myhobbies.html">My Hobbies</a>
-        <a href="myproject.html">My Project</a>
-        <a href="contactme.html">Contact Me</a>
-        <a href="lightbulb.html">Lightbulb</a>
-        <div class="topnav-right">
-            <a href="signin.html">Sign In</a>
-            <a href="signup.html">Sign Up</a>
-        </div>
-    </div>
+    <?php include '../include/navbar.php'; ?>
 
     <!-- ░ Banner ░ -->
     <div class="banner">
@@ -64,9 +52,7 @@
     </div>
 
     <!-- ░ Footer ░ -->
-    <footer class="footer">
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
+    <?php include '../include/footer.php'; ?>
 
     <!-- Javascript Import -->
     <script src="../js/lightbulb.js" defer></script>
