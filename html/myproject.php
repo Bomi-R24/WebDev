@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Top Navigation Section -->
-    <?php include '../include/topnav.php'; ?>
+    <?php include '../include/navbar.php'; ?>
     
     <!-- Banner Section -->
     <div class="banner">

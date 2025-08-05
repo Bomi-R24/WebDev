@@ -39,9 +39,9 @@
                 <li><a href="contactme.php">Contact Me</a></li>
             </ul>
         </div>
-
-        <?php include '../include/footer.php'; ?>
+  
     </div> <!-- /page-content -->
     
+    <?php include '../include/footer.php'; ?>
 </body>
 </php>
