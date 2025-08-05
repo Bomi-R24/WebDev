@@ -1,32 +1,46 @@
-// Wait until the HTML content is completely loaded before running the script
 document.addEventListener("DOMContentLoaded", function () {
-    // Select the sign in form element from the page
     const form = document.querySelector("form");
+    const messageBox = document.getElementById("message-box");
 
-    // Add a function that runs when the form is submitted
     form.addEventListener("submit", function (e) {
-        // Get the input values from the form and remove extra spaces
+        e.preventDefault(); // Stop default form submission
+
+        // Get the input values
         const username = form.username.value.trim();
         const password = form.password.value.trim();
 
-        // === Name Validation ===
-        // Only allow letters, spaces, hyphens, and apostrophes
-        const namePattern = /^[A-Za-z\s\-']+$/;
+        // Clear previous messages
+        messageBox.textContent = "";
+        messageBox.style.color = "red";
 
+        // === Name Validation ===
+        const namePattern = /^[A-Za-z\s\-']+$/;
         if (!namePattern.test(username)) {
-            alert("Please enter a valid name (letters, spaces, hyphens, or apostrophes only).");
-            e.preventDefault(); // Prevent the form from being submitted
+            messageBox.textContent = "Please enter a valid name (letters, spaces, hyphens, or apostrophes only).";
             return;
         }
 
         // === Password Validation ===
-        // Check that the password is not too short
         if (password.length < 6) {
-            alert("Password must be at least 6 characters long.");
-            e.preventDefault();
+            messageBox.textContent = "Password must be at least 6 characters long.";
             return;
         }
 
-        // All checks passed, allow form submission
+        // === If validation passed, send request to server ===
+        fetch("../php/signin_process.php", {
+            method: "POST",
+            body: new FormData(form),
+        })
+        .then(response => response.text().then(text => ({ status: response.status, text })))
+        .then(({ status, text }) => {
+            if (status === 200 && text === "success") {
+                window.location.href = "dashboard.php"; // Redirect to dashboard on success
+            } else {
+                messageBox.textContent = text || "An error occurred during sign in.";
+            }
+        })
+        .catch(error => {
+            messageBox.textContent = "Network error: " + error.message;
+        });
     });
 });

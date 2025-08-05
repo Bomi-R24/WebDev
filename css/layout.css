@@ -114,6 +114,21 @@ html, body {
     color: #00ff7b;
 }
 
+/* custom links */
+.custom-links {
+    color: #00ffb7;
+}
+
+.custom-links a {
+    color: #00ffb7;
+    text-decoration: none; /* optional: removes underline */
+}
+
+.custom-links a:hover {
+    text-decoration: underline; /* optional: adds underline on hover */
+}
+
+
 /* -------------------------------------------------
    EMPTY PAGE PADDING FIX
    ------------------------------------------------- */
